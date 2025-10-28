@@ -1,0 +1,17 @@
+package com.xzit.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author Walker
+ * @date 2025/10/28
+ * @project springboot_xzit
+ */
+@RestController
+public class StudentController {
+    @GetMapping("list")
+    public String list(){
+        return "hello spring boot 2";
+    }
+}
