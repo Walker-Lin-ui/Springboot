@@ -17,6 +17,7 @@
     <module>day1_springboot_create1</module>
       <module>day2_springboot_swagger</module>
       <module>day2_springboot_configFile</module>
+      <module>day3_springboot_yaml</module>
   </modules>
 
   <properties>

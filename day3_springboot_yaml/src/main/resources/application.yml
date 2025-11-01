@@ -1,0 +1,48 @@
+sysUser: 张三
+age: 20
+money: 166.23
+birth: 2000/1/23
+
+com:
+  xzit:
+    model:
+      users:
+        user-name: 李白
+        #userName: 李白
+        #user_name: 李白
+        #USER_NAME: 李白
+        gender: 男
+        age: 22
+        money: 265.78
+        birth: 2000/12/12
+        likes:
+          - 踢球
+          - 游泳
+          - 游戏
+        list: [aa,bb,cc]
+        set: [xxx,yyy,zzz]
+        map:
+          k1: v1
+        map1: {k1: v1,k2: v2}
+        studentList:
+          - name: 学生1 #含特殊字符时需加引号(\t)
+            age: 20
+          - name: 学生2
+            age: 21
+        studentList1:
+          - {name: 学生3,age: 19}
+          - {name: 学生4,age: 18}
+
+server:
+  servlet:
+    encoding:
+      charset: utf-8 #防止编译中文报错
+
+#spring:
+  #datasource:
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #username: root
+    #password: Lyj12345678
+spring:
+  profiles:
+    active: dev
