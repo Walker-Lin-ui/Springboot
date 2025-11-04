@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis?serverTimezone=GMT%2B8
+    username: root
+    password: Lyj12345678
+  #main:
+    #allow-bean-definition-overriding: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted # 全局逻辑删除字段名(deleted为实体类属性名称)
+      logic-delete-value: 1 # 逻辑已删除值。可选，默认值为 1
+      logic-not-delete-value: 0 # 逻辑未删除值。可选，默认值为 0
+      id-type: auto
+    #banner: false # 关闭 MyBatis Plus banner
+  mapper-locations: classpath:/mapper/**/*.xml
+  type-aliases-package: com.xzit.entity
+
