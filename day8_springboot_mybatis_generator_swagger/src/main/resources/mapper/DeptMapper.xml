@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzit.mybatisX.mapper.DeptMapper">
+
+    <resultMap id="BaseResultMap" type="com.xzit.mybatisX.entity.Dept">
+            <id property="id" column="id" />
+            <result property="deptName" column="dept_name" />
+            <result property="local" column="local" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,dept_name,local
+    </sql>
+    <insert id="insertSelective">
+        insert into com_dept
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="deptName != null">dept_name,</if>
+            <if test="local != null">local,</if>
+            <if test="createyear != null">createYear,</if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=BIGINT},</if>
+            <if test="deptName != null">#{deptName,jdbcType=VARCHAR},</if>
+            <if test="local != null">#{local,jdbcType=VARCHAR},</if>
+            <if test="createyear != null">#{createyear,jdbcType=INTEGER},</if>
+        </trim>
+    </insert>
+    <select id="selectByDeptNameAndLocal" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from com_dept
+        where
+        dept_name = #{deptName,jdbcType=VARCHAR}
+        AND local = #{local,jdbcType=VARCHAR}
+    </select>
+    <select id="selectCreateYearOrderByCreateYearDesc" resultMap="BaseResultMap">
+        select create_year
+        from com_dept
+        order by create_year desc
+    </select>
+    <select id="selectAllByDeptName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from com_dept
+        where
+        dept_name = #{deptName,jdbcType=VARCHAR}
+    </select>
+    <update id="updateCreateYearByCreateYearBetween">
+        update com_dept
+        set create_year = #{createYear,jdbcType=NUMERIC}
+        where create_year between #{beginCreateYear,jdbcType=NUMERIC} and #{endCreateYear,jdbcType=NUMERIC}
+    </update>
+    <delete id="delByLocalAndLocalLike">
+        delete
+        from com_dept
+        where
+            local = #{local,jdbcType=VARCHAR}
+          AND local like #{oldLocal,jdbcType=VARCHAR}
+    </delete>
+</mapper>

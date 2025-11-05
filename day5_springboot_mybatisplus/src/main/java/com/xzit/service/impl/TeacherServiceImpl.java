@@ -8,6 +8,6 @@ import com.xzit.service.TeacherService;
 import org.springframework.stereotype.Service;
 
 @Service
-//@DS("master")
+@DS("master")//不写也可以 .yml已经指定
 public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> implements TeacherService {
 }
