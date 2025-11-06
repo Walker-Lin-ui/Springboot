@@ -5,11 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan({"com.xzit.gene.mapper","com.xzit.mybatisX.mapper"})
-public class Day8SpringbootMybatisGeneratorSwaggerApplication {
+@MapperScan("com.xzit.mapper")
+public class Day9ThymeleafApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Day8SpringbootMybatisGeneratorSwaggerApplication.class, args);
+        SpringApplication.run(Day9ThymeleafApplication.class, args);
     }
 
 }

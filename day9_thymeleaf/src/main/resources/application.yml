@@ -1,0 +1,28 @@
+#配置druid数据源
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Lyj12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+#开发环境下，关闭缓存；生产环境下，打开缓存
+  thymeleaf:
+    cache: false
+  web:
+    resources:
+      static-locations: classpath:static
+
+#配置mybatis-plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted #逻辑删除的处理
+  mapper-locations: mapper/**/*.xml
+  type-aliases-package: com.xzit.entity
+
+savePath: D:\Java_workspace\springboot_xzit\day9_thymeleaf\target

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xzit</groupId>
-    <artifactId>day8_springboot_mybatis_generator_swagger</artifactId>
+    <artifactId>day9_thymeleaf</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>day8_springboot_mybatis_generator_swagger</name>
-    <description>day8_springboot_mybatis_generator_swagger</description>
+    <name>day9_thymeleaf</name>
+    <description>day9_thymeleaf</description>
     <url/>
     <licenses>
         <license/>
@@ -30,16 +30,21 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
-        <!--模板引擎-->
+        <!--thymeleaf模板-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!--mybatis plus依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+            <version>3.5.14</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -62,20 +67,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-        <!--mybatis plus依赖-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <version>3.5.14</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.5.14</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.2.27</version>
         </dependency>
         <!--MyBatis-Plus 版本更新：从 3.5.9 开始，分页功能的依赖被拆分，需要单独引入 mybatis-plus-jsqlparser。-->
         <dependency>
