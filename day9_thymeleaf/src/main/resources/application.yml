@@ -7,14 +7,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
-
 #开发环境下，关闭缓存；生产环境下，打开缓存
   thymeleaf:
     cache: false
   web:
     resources:
       static-locations: classpath:static
-
+  servlet:
+    multipart:
+      max-file-size: 104857600 #设置文件最大空间
 #配置mybatis-plus
 mybatis-plus:
   configuration:

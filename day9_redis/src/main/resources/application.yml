@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Lyj12345678
+  data:
+    redis:
+      port: 6379
+      host: 192.168.227.128
+      password: 123321
+      client-type: lettuce
+
+mybatis-plus:
+  type-aliases-package: com.xzit.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
